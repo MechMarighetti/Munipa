@@ -24,6 +24,18 @@ const books = [{
     bg:'coral'
 },
 {
+    title:'Soy un Gato',
+    author: 'Natsume Söseki',
+    year: 1924,
+    bg: 'indianred'
+},
+{
+    title:'Nuestra Parte de Noche',
+    author: 'Mariana Enriquez',
+    year: 2019,
+    bg: '#161707'
+},
+{
     title:'Un Caballero en Moscú',
     author: 'Amor Towles',
     year: 2016,
@@ -36,23 +48,31 @@ const books = [{
     bg:'#b2005a'
 },
 {
-    title:'Soy un Gato',
-    author: 'Natsume Söseki',
-    year: 1924,
-    bg: 'indianred'
+    title:'El Gatopardo',
+    author: 'Giuseppe Tomasi de Lampedusa',
+    year: 1958,
+    bg:'#b75060'
+},
+{
+    title:'Distancia de Rescate',
+    author: 'Samanta Schweblin',
+    year: 2014,
+    bg: '#322167'
 },
 ]
 
 const Cards = () => {
     const [otro, setOtro] = useState(0)
+     /* PREGUNTA: ¿Cómo usar el estado para que muestre el último elemento de la lista?*/ 
     let bgColor = books[otro].bg
+    /* Separar las funciones para que las variables at y sg queden en el numero correcto y se muestren correctamente sin neccesidad del trigger */
     const increment = () => {
         otro < (books.length - 1) ? setOtro(otro + 1) : setOtro(0);
-      };
-
-        const decrement = () => {
-            otro === 0 ? setOtro(books.length - 1) : setOtro(otro - 1);
-          };
+    };
+    
+    const decrement = () => {
+        otro === 0 ? setOtro(books.length - 1) : setOtro(otro - 1);
+    };
   return (
     <div className='books' style={{backgroundColor: bgColor}}>
         <div className='borde'>
@@ -62,9 +82,9 @@ const Cards = () => {
         
 
         <br />
-        <button onClick={decrement}style={{backgroundColor: bgColor}}>Anterior</button>
+        <button onClick={decrement}style={{backgroundColor: bgColor}}>Anterior: {books[(otro-1)]?.title || books[books.length-1]?.title}</button>
            
-        <button onClick={increment}style={{backgroundColor: bgColor}}>Siguiente</button>
+        <button onClick={increment}style={{backgroundColor: bgColor}}>Siguiente: {books[otro+1]?.title || books[0]?.title}</button>
         </div>
 
     </div>

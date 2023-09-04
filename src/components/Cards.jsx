@@ -58,6 +58,11 @@ const books = [{
     author: 'Samanta Schweblin',
     year: 2014,
     bg: '#322167'
+},{
+    title:'¡Noticia Bomba!',
+    author: 'Evelyn Waugh',
+    year: 1938,
+    bg: '#760d12'
 },
 ]
 

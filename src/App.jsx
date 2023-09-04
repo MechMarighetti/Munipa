@@ -13,6 +13,7 @@ function App() {
       <h1>Mi Biblioteca</h1>
       <Cards></Cards>
       {/* <Watch></Watch> */}
+      <AddBook></AddBook>
           </>
 
   )

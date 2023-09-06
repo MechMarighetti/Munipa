@@ -18,6 +18,12 @@ const books = [{
     bg: '#728191'
 },
 {
+    title: 'Boquitas Pintadas',
+    author: 'Manuel Puig',
+    year: 1969,
+    bg: '#336699'
+},
+{
     title: 'Un Mundo Feliz',
     author: 'Aldous Huxley',
     year: 1936,
@@ -79,28 +85,41 @@ const books = [{
 
 const Cards = () => {
     const [otro, setOtro] = useState(0)
+    const [activeArray, setActiveArray] = useState(books)
     /* PREGUNTA: ¿Cómo usar el estado para que muestre el último elemento de la lista?*/
     let bgColor = books[otro].bg
     /* Separar las funciones para que las variables at y sg queden en el numero correcto y se muestren correctamente sin neccesidad del trigger */
     const increment = () => {
         otro < (books.length - 1) ? setOtro(otro + 1) : setOtro(0);
+    
     };
 
     const decrement = () => {
         otro === 0 ? setOtro(books.length - 1) : setOtro(otro - 1);
     };
+    const sortedBooks=[...books].sort((a,b) => a.title > b.title ? 1 : -1)
+    const handleSorted = () => {
+        setActiveArray(sortedBooks)
+    }
+    const handleOriginal = () => {
+        setActiveArray(books)
+    }
+
     return (
         <div className='books' style={{ backgroundColor: bgColor }}>
             <div className='borde'>
-                <h2>{books[otro].author}</h2>
-                <h1>{books[otro].title}</h1>
-                <p>{books[otro].year}</p>
+                <h2>{activeArray[otro].author}</h2>
+                <h1>{activeArray[otro].title}</h1>
+                <p>{activeArray[otro].year}</p>
 
 
                 <br />
-                <button onClick={decrement} style={{ backgroundColor: bgColor }}>Anterior: {books[(otro - 1)]?.title || books[books.length - 1]?.title}</button>
+                <button onClick={decrement} style={{ backgroundColor: bgColor }}>Anterior: {activeArray[(otro - 1)]?.title || books[books.length - 1]?.title}</button>
 
-                <button onClick={increment} style={{ backgroundColor: bgColor }}>Siguiente: {books[otro + 1]?.title || books[0]?.title}</button>
+                <button onClick={increment} style={{ backgroundColor: bgColor }}>Siguiente: {activeArray[otro + 1]?.title || books[0]?.title}</button>
+               <br />
+                <button onClick={handleSorted}>Orden Alfabético</button>
+                <button onClick={handleOriginal}>Orden de Entradas</button>
             </div>
 
         </div>

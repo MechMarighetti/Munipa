@@ -101,8 +101,12 @@ const Cards = () => {
     const handleSorted = () => {
         setActiveArray(sortedBooks)
     }
+    const newBooks=[...books].sort((a,b) => a.year < b.year ? 1 : -1)
     const handleOriginal = () => {
         setActiveArray(books)
+    }
+    const handleNew =()=> {
+        setActiveArray(newBooks)
     }
 
     return (
@@ -120,6 +124,7 @@ const Cards = () => {
                <br />
                 <button onClick={handleSorted} style={{ backgroundColor: bgColor }}>Orden Alfabético</button>
                 <button onClick={handleOriginal}style={{ backgroundColor: bgColor }}>Orden de Entradas</button>
+                <button onClick={handleNew}style={{ backgroundColor: bgColor }}>Nuevos</button>
             </div>
 
         </div>

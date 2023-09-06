@@ -87,7 +87,7 @@ const Cards = () => {
     const [otro, setOtro] = useState(0)
     const [activeArray, setActiveArray] = useState(books)
     /* PREGUNTA: ¿Cómo usar el estado para que muestre el último elemento de la lista?*/
-    let bgColor = books[otro].bg
+    let bgColor = activeArray[otro].bg
     /* Separar las funciones para que las variables at y sg queden en el numero correcto y se muestren correctamente sin neccesidad del trigger */
     const increment = () => {
         otro < (books.length - 1) ? setOtro(otro + 1) : setOtro(0);
@@ -118,8 +118,8 @@ const Cards = () => {
 
                 <button onClick={increment} style={{ backgroundColor: bgColor }}>Siguiente: {activeArray[otro + 1]?.title || books[0]?.title}</button>
                <br />
-                <button onClick={handleSorted}>Orden Alfabético</button>
-                <button onClick={handleOriginal}>Orden de Entradas</button>
+                <button onClick={handleSorted} style={{ backgroundColor: bgColor }}>Orden Alfabético</button>
+                <button onClick={handleOriginal}style={{ backgroundColor: bgColor }}>Orden de Entradas</button>
             </div>
 
         </div>

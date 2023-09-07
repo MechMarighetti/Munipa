@@ -41,7 +41,7 @@ const AddBook = () => {
   };
 
   return (
-    <div>
+    <div className='input'>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

@@ -122,9 +122,11 @@ const Cards = () => {
 
                 <button onClick={increment} style={{ backgroundColor: bgColor }}>Siguiente: {activeArray[otro + 1]?.title || books[0]?.title}</button>
                <br />
+               <div className='btn'>
                 <button onClick={handleSorted} style={{ backgroundColor: bgColor }}>Orden Alfabético</button>
                 <button onClick={handleOriginal}style={{ backgroundColor: bgColor }}>Orden de Entradas</button>
                 <button onClick={handleNew}style={{ backgroundColor: bgColor }}>Nuevos</button>
+               </div>
             </div>
 
         </div>

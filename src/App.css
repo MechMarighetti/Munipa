@@ -12,7 +12,15 @@
   width: 50rem;
   height: 30em;
   box-shadow: 10px 10px snow;
+  
 }
+.input {
+  display: flex;
+}
+.input > input{
+  margin-left: 15px;
+}
+
 .borde {
   border-style: double;
   border-color: snow;
@@ -20,18 +28,7 @@
   border-radius: 5px;
   padding: 5em;
 }
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+
 
 @keyframes logo-spin {
   from {
@@ -42,37 +39,37 @@
   }
 }
 
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes colorchange {
+  0% {
+    color: #91DFA8;
+  }
+  50% {
+    color: rgb(255, 163, 255);
+  } 90% {
+    color: lightseagreen;
+  } 100% {
+    color: rgb(179, 221, 111);
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
 
 /*Watch styles */
-.container {display: flex;
-  flex-direction: column; /* Para apilar los divs verticalmente */
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center; /* Centrar verticalmente */
-  height: 100vh; /* Para que la altura del contenedor sea del 100% del viewport */}
-
-  .box{width: 200px;
-    height: 100px;
-    text-align: center;
-    position: relative;
-    line-height: 100px; /* Para centrar el contenido verticalmente */
-    margin: 10px; /* Añade margen entre los divs si lo deseas */
-    z-index: 1;
-  }
   
-#clock { 
+/* #clock { 
   display: flex;   
   justify-content: center;
   float: center;
@@ -99,6 +96,11 @@ display: flex;
 align-items: center;
 justify-content: center;
 font-size: 100pt;
-  font-family: 'Raleway Dots', cursive;
-
+  font-family: 'Raleway Dots', cursive;} */
+  
+.footer{
+  width: auto;
+  height: auto;
+    padding: 5%;
+  animation: colorchange 4s ease-out infinite;
 }

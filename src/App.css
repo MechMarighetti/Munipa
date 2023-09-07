@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Codystar&family=Gwendolyn:wght@700&family=Raleway+Dots&display=swap');
 
+:root{
+  --c-rosado: #ff7db3;
+  --c-verde: #91DFA8;
+  --c-naranja: #ff9028;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  color:#ff7db3
 }
 
 .books {

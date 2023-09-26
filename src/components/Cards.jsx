@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import React, { useState } from 'react'
 
 const books = [{
     title: 'Cien Años de Soledad',
@@ -83,7 +83,7 @@ const books = [{
 }
 ]
 
-const Cards = () => {
+const Cards = (library) => {
     const [otro, setOtro] = useState(0)
     const [activeArray, setActiveArray] = useState(books)
     /* PREGUNTA: ¿Cómo usar el estado para que muestre el último elemento de la lista?*/
@@ -91,21 +91,23 @@ const Cards = () => {
     /* Separar las funciones para que las variables at y sg queden en el numero correcto y se muestren correctamente sin neccesidad del trigger */
     const increment = () => {
         otro < (books.length - 1) ? setOtro(otro + 1) : setOtro(0);
-    
+        console.log('biblioteca',library)
+        console.log('books',[books], {books})
+
     };
 
     const decrement = () => {
         otro === 0 ? setOtro(books.length - 1) : setOtro(otro - 1);
     };
-    const sortedBooks=[...books].sort((a,b) => a.title > b.title ? 1 : -1)
+    const sortedBooks = [...books].sort((a, b) => a.title > b.title ? 1 : -1)
     const handleSorted = () => {
         setActiveArray(sortedBooks)
     }
-    const newBooks=[...books].sort((a,b) => a.year < b.year ? 1 : -1)
+    const newBooks = [...books].sort((a, b) => a.year < b.year ? 1 : -1)
     const handleOriginal = () => {
         setActiveArray(books)
     }
-    const handleNew =()=> {
+    const handleNew = () => {
         setActiveArray(newBooks)
     }
 
@@ -121,13 +123,13 @@ const Cards = () => {
                 <button onClick={decrement} style={{ backgroundColor: bgColor }}>Anterior: {activeArray[(otro - 1)]?.title || books[books.length - 1]?.title}</button>
 
                 <button onClick={increment} style={{ backgroundColor: bgColor }}>Siguiente: {activeArray[otro + 1]?.title || books[0]?.title}</button>
-               <br />
-               <div className='btn'>
-                <h4>Ordenar: </h4>
-                <button onClick={handleSorted} style={{ backgroundColor: bgColor }}>Alfabéticamente</button>
-                <button onClick={handleNew}style={{ backgroundColor: bgColor }}>Más nuevos</button>
-                <button onClick={handleOriginal}style={{ backgroundColor: bgColor }}>Original</button>
-               </div>
+                <br />
+                <div className='btn'>
+                    <h4>Ordenar: </h4>
+                    <button onClick={handleSorted} style={{ backgroundColor: bgColor }}>Alfabéticamente</button>
+                    <button onClick={handleNew} style={{ backgroundColor: bgColor }}>Más nuevos</button>
+                    <button onClick={handleOriginal} style={{ backgroundColor: bgColor }}>Original</button>
+                </div>
             </div>
 
         </div>

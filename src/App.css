@@ -38,7 +38,7 @@
   border-width: 6px;
   border-radius: 5px;
   padding: 5em;
-}
+ }
 
 
 @keyframes logo-spin {
@@ -68,6 +68,19 @@
     color: lightseagreen;
   } 100% {
     color: rgb(179, 221, 111);
+  }
+}
+
+@keyframes colorfill {
+  0% {
+    fill: #91DFA8;
+  }
+  50% {
+    fill: rgb(255, 163, 255);
+  } 90% {
+    fill: lightseagreen;
+  } 100% {
+    fill: rgb(179, 221, 111);
   }
 }
 
@@ -114,13 +127,4 @@ font-size: 100pt;
   height: auto;
     padding: 5%;
   animation: colorchange 4s ease-out infinite;
-}
-
-.input {
-  display: flex;
-  flex-direction: row-reverse;
-  gap: 35px;
-}
-.input > input {
-  border: #91DFA8 2px solid;
 }

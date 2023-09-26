@@ -103,13 +103,15 @@ const books = [{
 
 
 const AddBook = () => {
-  const randomColor = Math.floor(Math.random()*16777215).toString(16)
+  const randomColor = '#' +  Math.floor(Math.random() * 16777215).toString(16)
+  const randomColor2 = '#' +   Math.floor(Math.random() * 16777215).toString(16)
+
 
   const [books, setBooks] = useState({
     title: '',
     author: '',
     year: '',
-    bg: '#' + randomColor, // Valor inicial para el input de color
+    bg: randomColor, // Valor inicial para el input de color
   });
 
   const [library, setLibrary] = useState(books)
@@ -127,13 +129,27 @@ const AddBook = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Aquí puedes realizar cualquier acción que desees con los datos del libro, como enviarlos a un servidor o almacenarlos en un estado global.
-    console.log(books);
     setLibrary([...library, books])
     console.log(library);
+    console.log(books);
+    resetForm();
   };
+
+  /* FORMULARIO PARA TODOS LOS INPUTS
+   const resetForm = () =>
+    setForm({
+      title: '',
+    author: '',
+    year: '',
+    bg: '#' + randomColor,
+    });
+ */
 
   return (
     <div className='input'>
+       <svg className='gradient' fill={randomColor}>
+      <circle cx="50" cy="60" r="50"></circle>
+    </svg>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

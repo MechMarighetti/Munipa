@@ -72,13 +72,13 @@ const books = [{
 }, {
     title: 'El Principito',
     author: 'Antoine de Saint-Exupéry',
-    year: '1943',
+    year: 1943,
     bg: '#a46904'
 },
 {
     title: 'El Camino del Artista',
     author: 'Julia Cameron',
-    year: '1992',
+    year: 1992,
     bg: '#135253'
 }
 ]

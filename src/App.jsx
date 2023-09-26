@@ -3,6 +3,7 @@ import Cards from './components/Cards'
 import AddBook from './components/AddBook'
 import Watch from './components/Watch'
 import './App.css'
+import Timer from './components/timer'
 
 function App() {
   const email= 'mercedesmarighetti@gmail.com'
@@ -12,7 +13,8 @@ function App() {
       <AddBook></AddBook>
       <br />
       <Cards></Cards>
-      {/* <Watch></Watch> */}
+  {/*   <Watch></Watch>
+    <Timer></Timer> */}
 
       <div className='footer'>
       <h3>Mercedes Marighetti 2023</h3>

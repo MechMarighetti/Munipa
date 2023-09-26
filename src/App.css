@@ -2,8 +2,12 @@
 
 :root{
   --c-rosado: #ff7db3;
+  --c-fucsia: #EB55BF;
+  --c-violeta: #B292EA;
   --c-verde: #91DFA8;
+  --c-verdeclaro: #F1FFD9;
   --c-naranja: #ff9028;
+  --c-celeste: #8BDBF5;
 }
 
 #root {
@@ -11,7 +15,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  color:#ff7db3
+  color:#ffffff
 }
 
 .books {
@@ -110,4 +114,13 @@ font-size: 100pt;
   height: auto;
     padding: 5%;
   animation: colorchange 4s ease-out infinite;
+}
+
+.input {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 35px;
+}
+.input > input {
+  border: #91DFA8 2px solid;
 }

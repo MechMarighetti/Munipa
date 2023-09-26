@@ -103,8 +103,8 @@ const books = [{
 
 
 const AddBook = () => {
-  const randomColor = '#' +  Math.floor(Math.random() * 16777215).toString(16)
-  const randomColor2 = '#' +   Math.floor(Math.random() * 16777215).toString(16)
+  const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16)
+  const randomColor2 = '#' + Math.floor(Math.random() * 16777215).toString(16)
 
 
   const [books, setBooks] = useState({
@@ -147,10 +147,10 @@ const AddBook = () => {
 
   return (
     <div className='input'>
-       <svg className='gradient' fill={randomColor}>
-      <circle cx="50" cy="60" r="50"></circle>
-    </svg>
-      <form onSubmit={handleSubmit}>
+      <svg className='gradient' fill={randomColor2} viewBox='0 0 90 90'  >
+        <rect ry='18%' x='0' y='0' width="86" height="86"></rect>
+           </svg>
+      <form className='form' onSubmit={handleSubmit}>
         <input
           type="text"
           name="title"

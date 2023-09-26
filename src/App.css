@@ -25,11 +25,22 @@
   box-shadow: 10px 10px snow;
   
 }
-.input {
+.form {
   display: flex;
 }
-.input > input{
-  margin-left: 15px;
+
+.form > input {
+  align-items: flex-start;
+  justify-content: space-between;
+
+border-radius: 10px;
+}
+
+div.input {
+border: #EB55BF;
+display: flex;
+flex-direction: row;
+height: 55px;
 }
 
 .borde {

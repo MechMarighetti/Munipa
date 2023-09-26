@@ -4,14 +4,17 @@ import AddBook from './components/AddBook'
 import Watch from './components/Watch'
 import './App.css'
 import Timer from './components/timer'
+import Title from './components/Title'
+
 
 function App() {
   const email= 'mercedesmarighetti@gmail.com'
   return (
     <>
-      <h1>Mi Biblioteca</h1>
+      <Title>Esta biblioteca es mia</Title>
+
       <AddBook></AddBook>
-      <br />
+         <br />
       <Cards></Cards>
   {/*   <Watch></Watch>
     <Timer></Timer> */}

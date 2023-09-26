@@ -25,6 +25,12 @@
   box-shadow: 10px 10px snow;
   
 }
+
+.miniBooks {
+  width: 30 px;
+  flex-wrap: wrap;
+}
+
 .form {
   display: flex;
 }
@@ -39,8 +45,9 @@ border-radius: 10px;
 div.input {
 border: #EB55BF;
 display: flex;
-flex-direction: row;
-height: 55px;
+justify-content: space-around;
+height: 35px;
+gap: 20px;
 }
 
 .borde {
@@ -51,6 +58,7 @@ height: 55px;
   padding: 5em;
  }
 
+ 
 
 @keyframes logo-spin {
   from {
@@ -101,6 +109,10 @@ height: 55px;
   }
 }
 
+.automatica {
+  color:var(--c-naranja);
+  animation: colorchange infinite 3s linear ;
+}
 
 /*Watch styles */
   

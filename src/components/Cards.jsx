@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const books = [{
+export const books = [{
     title: 'Cien Años de Soledad',
     author: 'Gabriel García Marquez',
     year: 1961,

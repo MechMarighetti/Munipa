@@ -160,6 +160,8 @@ font-size: 100pt;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
+  transform-origin: 0% 0%;
+  transform: rotate(0.25turn) translateY(-35px);
 
 }
 
@@ -172,7 +174,7 @@ font-size: 100pt;
   box-sizing: border-box; /* Incluye el padding y el borde en el ancho del elemento */
   padding: 15px; /* Agrega espacio interno a los divs */
   text-align: center; /* Centra el texto dentro de los divs */
-  word-wrap: break-word; /* Rompe las palabras largas si es necesario */
+  word-wrap: all; /* Rompe las palabras largas si es necesario */
   white-space: normal; /* Permite que el texto se ajuste automáticamente */
   background-color: #fff; /* Cambia el color de fondo */
   display: flex; /* Utiliza flexbox para controlar el tamaño del fondo coloreado */
@@ -195,9 +197,61 @@ font-size: 100pt;
 .Card h2 {
   margin: 5px 0;
   font-size: 18px;
+  
 }
 
 .Card p {
   margin: 5px 0;
+  font-size: 12px;
+}
+
+/* Establece el estilo de la estantería */
+.shelf {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espacio entre los estantes */
+  justify-content: space-between; /* Distribuye los estantes uniformemente */
+  border: 5px rgb(94, 55, 41);
+}
+
+/* Establece el estilo de cada libro */
+.bookie {
+  width: calc(45% - 10px); /* Calcula el ancho para 5 libros por estante */
+  height: fit-content;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: baseline;
+  background-color: #fff; /* Color de fondo de los libros */
+  border: 1px solid #ddd;
+  padding: 10px;
+  transform: rotate(180deg); /* Rota los libros 45 grados */
+  transform-origin: bottom left; /* Establece el punto de rotación */
+  margin-bottom: 10px; /* Espacio entre los libros en el mismo estante */
+
+}
+
+/* Establece el estilo del contenido dentro de cada libro */
+.book-content {
+ 
+ transform: rotate(90deg);  /* Invierte la rotación del texto   */
+  text-align: center;
+  height: auto;
+}
+
+/* Establece los estilos específicos de los elementos h4, h2 y p dentro de los libros */
+.book-content h4 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.book-content h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.book-content p {
+  margin: 0;
   font-size: 12px;
 }

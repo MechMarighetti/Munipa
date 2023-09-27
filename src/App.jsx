@@ -6,29 +6,32 @@ import './App.css'
 import Timer from './components/timer'
 import Title from './components/Title'
 import MiniCard from './components/MiniCard'
+import Shelfie from './components/Shelfie'
 
 
 function App() {
-  const email= 'mercedesmarighetti@gmail.com'
+  const email = 'mercedesmarighetti@gmail.com'
   return (
     <>
       <Title>Mi biblioteca</Title>
 
       <AddBook></AddBook>
-         <br />
-         <div className='grid'>
-         <MiniCard></MiniCard>
-
-         </div>
+      <br />
+      <div className='shelf'>
+      <Shelfie></Shelfie>
+      </div>
+      {/* <div className='grid'>
+        <MiniCard></MiniCard>
+      </div> */}
       {/* <Cards></Cards> */}
-  {/*   <Watch></Watch>
+      {/*   <Watch></Watch>
     <Timer></Timer> */}
 
       <div className='footer'>
-      <h3>Mercedes Marighetti 2023</h3>
-      <p>Contact me: {email}</p>
-    </div>
-          </>
+        <h3>Mercedes Marighetti 2023</h3>
+        <p>Contact me: {email}</p>
+      </div>
+    </>
 
   )
 }

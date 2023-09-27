@@ -5,17 +5,22 @@ import Watch from './components/Watch'
 import './App.css'
 import Timer from './components/timer'
 import Title from './components/Title'
+import MiniCard from './components/MiniCard'
 
 
 function App() {
   const email= 'mercedesmarighetti@gmail.com'
   return (
     <>
-      <Title>Esta biblioteca es mia</Title>
+      <Title>Mi biblioteca</Title>
 
       <AddBook></AddBook>
          <br />
-      <Cards></Cards>
+         <div className='grid'>
+         <MiniCard></MiniCard>
+
+         </div>
+      {/* <Cards></Cards> */}
   {/*   <Watch></Watch>
     <Timer></Timer> */}
 

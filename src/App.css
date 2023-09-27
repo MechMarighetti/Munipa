@@ -18,17 +18,16 @@
   color:#ffffff
 }
 
+.Card:hover {
+ animation: scale 1s 1;
+}
+
 .books {
   padding: 5em;
   width: 50rem;
   height: 30em;
   box-shadow: 10px 10px snow;
   
-}
-
-.miniBooks {
-  width: 30 px;
-  flex-wrap: wrap;
 }
 
 .form {
@@ -38,6 +37,7 @@
 .form > input {
   align-items: flex-start;
   justify-content: space-between;
+  
 
 border-radius: 10px;
 }
@@ -48,15 +48,16 @@ display: flex;
 justify-content: space-around;
 height: 35px;
 gap: 20px;
+flex-direction: column;
 }
 
 .borde {
   border-style: double;
   border-color: snow;
-  border-width: 6px;
-  border-radius: 5px;
-  padding: 5em;
- }
+  border-width: 10%;
+  border-radius: 5%;
+  padding: 2%;
+   }
 
  
 
@@ -70,11 +71,13 @@ gap: 20px;
 }
 
 @keyframes scale {
-  from {
+  0% {
     transform: scale(1);
   }
-  to {
-    transform: scale(0);
+  50% {
+    transform: scale(1.2);
+  } 100% {
+    transform: scale(1);
   }
 }
 @keyframes colorchange {
@@ -146,8 +149,55 @@ font-size: 100pt;
   font-family: 'Raleway Dots', cursive;} */
   
 .footer{
+  display: block;
   width: auto;
   height: auto;
     padding: 5%;
   animation: colorchange 4s ease-out infinite;
+}
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+}
+
+/* Establece el tamaño máximo para los divs y hace que se muestren en línea */
+.Card {
+  width: 30%; /* Calcula el ancho para que quepan tres divs en una fila */
+  margin: auto; /* Añade margen para separar los divs */
+  display: inline-block; /* Hace que los divs se muestren en línea */
+  vertical-align: top; /* Alinea los divs en la parte superior de la línea */
+  box-sizing: border-box; /* Incluye el padding y el borde en el ancho del elemento */
+  padding: 15px; /* Agrega espacio interno a los divs */
+  text-align: center; /* Centra el texto dentro de los divs */
+  word-wrap: break-word; /* Rompe las palabras largas si es necesario */
+  white-space: normal; /* Permite que el texto se ajuste automáticamente */
+  background-color: #fff; /* Cambia el color de fondo */
+  display: flex; /* Utiliza flexbox para controlar el tamaño del fondo coloreado */
+  flex-direction: column; /* Apila el contenido en columna */
+}
+
+/* Establece el tamaño del fondo coloreado */
+.Card::before {
+  content: "";
+  flex: 1; /* Hace que el fondo coloreado ocupe 1/3 del div */
+  background-color: inherit; /* Utiliza el mismo color de fondo que el div principal */
+}
+
+/* Estilos para el contenido dentro de los divs */
+.Card h4 {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.Card h2 {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+.Card p {
+  margin: 5px 0;
+  font-size: 12px;
 }

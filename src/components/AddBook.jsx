@@ -111,7 +111,7 @@ const AddBook = () => {
     title: '',
     author: '',
     year: '',
-    bg: randomColor, // Valor inicial para el input de color
+    bg: randomColor2, // Valor inicial para el input de color
   });
 
   const [library, setLibrary] = useState(books)
@@ -146,54 +146,61 @@ const AddBook = () => {
  */
 
   return (
-    <div className='input'>
-      <svg className='gradient' fill={randomColor2} viewBox='0 0 90 90'  >
-        <rect ry='18%' x='0' y='0' width="86" height="86"></rect>
-           </svg>
-      <form className='form' onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="title"
-          placeholder="Título del Libro"
-          value={books.title}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="author"
-          placeholder="Autor"
-          value={books.author}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="year"
-          placeholder="Año de Publicación"
-          value={books.year}
-          onChange={handleChange}
-        />
-        <input
-          type="color"
-          name="bg"
-          id="bg"
-          value={books.bg}
-          onChange={handleChange}
-          list='suggested'
-        />
-        <datalist id='suggested'>
-          <option value="#ff7db3">Rosado</option>
-          <option value="#EB55BF">Fucsia</option>
-          <option value="#B292EA">Violeta</option>
-          <option value="#8BDBF5">Celeste</option>
-          <option value="#91DFA8">Verde</option>
-          <option value="#F1FFD9">Verde</option>
-          <option value="#fff8b5">Amarillo</option>
-          <option value="#ff9028">Naranaja</option>
-        </datalist>
-        <button type="submit">Agregar Libro</button>
-      </form>
-     
-    </div>
+    <>
+       <svg width="600" height="30" viewBox="0 0 600 30">
+        <line x1="100" x2="460" y1="10" y2="10" stroke={randomColor2} strokeWidth="5px" ></line>
+      </svg>
+      <div className='input'>
+        <form style={{
+          border: randomColor,
+          borderWidth: '2px',
+          padding: '5px',          
+        }} className='form' onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="title"
+            placeholder="Título del Libro"
+            value={books.title}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="author"
+            placeholder="Autor"
+            value={books.author}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="year"
+            placeholder="Año de Publicación"
+            value={books.year}
+            onChange={handleChange}
+          />
+          <input
+            type="color"
+            name="bg"
+            id="bg"
+            value={books.bg}
+            onChange={handleChange}
+            list='suggested'
+          />
+          <datalist id='suggested'>
+            <option value="#ff7db3">Rosado</option>
+            <option value="#EB55BF">Fucsia</option>
+            <option value="#B292EA">Violeta</option>
+            <option value="#8BDBF5">Celeste</option>
+            <option value="#91DFA8">Verde</option>
+            <option value="#F1FFD9">Verde</option>
+            <option value="#fff8b5">Amarillo</option>
+            <option value="#ff9028">Naranaja</option>
+          </datalist>
+          <button type="submit">Agregar Libro</button>
+        </form>
+
+      </div>
+      
+    </>
   );
 };
 
